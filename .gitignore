@@ -1,0 +1,357 @@
+# ⚠️  SECURITY WARNING: NEVER COMMIT SENSITIVE DATA
+# This file ensures that secrets, API keys, and credentials are NOT pushed to Git
+# If you accidentally commit secrets, use: git rm --cached <filename> && git commit -m "Remove secrets"
+# Then rotate your tokens/keys immediately!
+
+# ==================================================
+# 🔐 SECRETS & CREDENTIALS (CRITICAL - HIGHEST PRIORITY)
+# ==================================================
+
+# Environment Files (ALL variants must be ignored)
+.env
+.env.local
+.env.*.local
+.env.docker
+.env.production
+.env.development
+.env.staging
+.env.test
+*.env
+.env.*
+!.env.example
+
+# Secrets Directories
+secrets/
+credentials/
+.credentials/
+.aws/
+.azure/
+.gcp/
+ssh_keys/
+pem_files/
+
+# Config Files with Secrets
+config.local.py
+config.local.json
+config.prod.json
+config.*.json
+settings.local.py
+local_settings.py
+.secret*
+*.secret
+secrets.yaml
+secrets.json
+
+# API Keys & Tokens
+api_keys.txt
+.api_keys
+*.apikey
+*.token
+auth.json
+credentials.json
+google-credentials.json
+
+# Database Connection Files
+db_config.json
+database.ini
+.pgpass
+
+# Streamlit Secrets
+.streamlit/secrets.toml
+streamlit_app/.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+.env.venv
+env.bak/
+venv.bak/
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.code-workspace
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.terraform.lock.hcl
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+*~
+.~*
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.hypothesis/
+*.tmp.*
+
+# Node (if applicable)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Docker
+docker-compose.override.yml
+.docker/
+.dockerignore
+
+# Build & Distribution
+dist/
+build/
+*.egg-info/
+.eggs/
+.tox/
+
+# Git
+.git/
+.gitignore_global
+
+# VS Code
+.vscode
+launch.json
+settings.json
+
+# Large Files
+*.tar
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.postgres
+
+# Compiled Python
+*.pyc
+*.pyo
+*.pyd
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.pytest_cache/
+
+# Pylint
+.pylintrc
+
+# SageMath parsed files
+.sage.py
+
+# Testing
+.tox/
+.hypothesis/
+.pytest_cache/
+
+# Documentation
+site/
+docs/_build/
+
+# ==================================================
+# 📝 EXAMPLES & TEMPLATES (Keep these for reference)
+# ==================================================
+!.env.example
+!.env.example.*
+!.env.docker
+!secrets.example.json
+!api_keys.example.txt
+.gcloud/
+oauth.json
+service-account*.json
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Streamlit
+.streamlit/
+*.streamlit.cache/
+.streamlit_cache/
+secrets.toml
+.streamlit/secrets.toml
+
+# Sensitive Credentials & Tokens
+*.key
+*.pem
+*.pfx
+*.p12
+*.pub
+*.ppk
+*.crt
+*.cer
+private_key*
+api_key*
+access_token*
+refresh_token*
+private.key
+public.key
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
+
+# Large Files & Models
+ml_models/**/*.pkl
+ml_models/**/*.joblib
+ml_models/**/*.h5
+ml_models/**/*.pt
+ml_models/**/*.pth
+models/**/*.pkl
+models/**/*.joblib
+models/**/*.h5
+models/**/*.pt
+models/**/*.pth
+*.csv
+*.parquet
+
+# Data
+data/
+datasets/
+*.xlsx
+*.xls
+
+# Logs
+*.log
+logs/
+*.pot
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+connection_string*
+database.ini
+db.ini
+
+# OS specific
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# System
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Node (if any frontend tools used)
+node_modules/
+package-lock.json
+
+# Configuration files with sensitive data
+config.properties
+config.yml
+*.config
+settings.local.*
+local_settings.py
+docker-compose.local.yml
+
+# API Keys & Credentials Found in Files
+**/snowflake_creds.*
+**/aws_creds.*
+**/gcp_*
+**/groq_key*
+**/openai_key*
+**/api_key*
+
+# Backup & Temporary Sensitive Files
+*.backup
+*.bak.env
+.env.backup
+secrets.backup
+credentials.backup

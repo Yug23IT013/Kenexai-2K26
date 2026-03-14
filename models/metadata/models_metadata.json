@@ -1,0 +1,29 @@
+{
+  "injury_risk_model": {
+    "name": "LogisticRegression",
+    "notebook": "injury_risk_logistic_regression.ipynb",
+    "task": "Binary classification - Injury Risk Prediction",
+    "target": "injury_risk (0=Safe, 1=Injured)",
+    "features": [
+      "matches_last_7_days",
+      "previous_injury_count",
+      "fatigue_index",
+      "training_load",
+      "recovery_time",
+      "minutes_played",
+      "potential",
+      "ball_control"
+    ],
+    "model_file": "models/injury_model.pkl",
+    "scaler_file": "models/injury_scaler.pkl"
+  },
+  "performance_model": {
+    "name": "LinearRegression",
+    "notebook": "Final Performance Model/Performance_Model_Baseline.ipynb",
+    "task": "Regression - Player Performance Prediction",
+    "target": "overall_rating (continuous scale)",
+    "features": "See notebook for complete feature list",
+    "model_file": "models/performance_model.pkl",
+    "scaler_file": "models/performance_scaler.pkl"
+  }
+}

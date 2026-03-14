@@ -1,0 +1,51 @@
+version: '3.8'
+
+# Football Analytics Platform - Development Configuration
+# Use this for local development with hot reload and debugging
+
+services:
+  football-app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: football-analytics-dev
+    ports:
+      - "8501:8501"
+      - "8000:8000"
+    environment:
+      SNOWFLAKE_ACCOUNT: ${SNOWFLAKE_ACCOUNT:-your_snowflake_account_here}
+      SNOWFLAKE_USER: ${SNOWFLAKE_USER:-MARK}
+      SNOWFLAKE_PASSWORD: ${SNOWFLAKE_PASSWORD}
+      SNOWFLAKE_DATABASE: ${SNOWFLAKE_DATABASE:-sports_db}
+      SNOWFLAKE_SCHEMA: ${SNOWFLAKE_SCHEMA:-analytics}
+      SNOWFLAKE_WAREHOUSE: ${SNOWFLAKE_WAREHOUSE:-SPORTS_WH}
+      SNOWFLAKE_ROLE: ${SNOWFLAKE_ROLE:-ACCOUNTADMIN}
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      GROQ_MODEL: ${GROQ_MODEL:-mixtral-8x7b-32768}
+      BACKEND_HOST: 0.0.0.0
+      BACKEND_PORT: 8000
+      PYTHONUNBUFFERED: 1
+      PYTHONDONTWRITEBYTECODE: 1
+    
+    volumes:
+      # Mount entire app for live reload during development
+      - .:/app
+      - /app/__pycache__
+      - /app/.streamlit
+      - /app/.pytest_cache
+    
+    networks:
+      - football-net
+    
+    restart: unless-stopped
+    
+    # Keep container running for interactive debugging
+    stdin_open: true
+    tty: true
+
+networks:
+  football-net:
+    driver: bridge
+
+# Usage:
+# docker-compose -f docker-compose.dev.yml up
