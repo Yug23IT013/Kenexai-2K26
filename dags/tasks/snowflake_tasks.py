@@ -4,6 +4,7 @@ Snowflake Tasks
 Write predictions and recommendations to Snowflake for analytics.
 """
 
+import os
 import pandas as pd
 from snowflake.connector import connect
 from airflow.utils.log.logging_mixin import LoggingMixin
@@ -33,13 +34,13 @@ def write_results_to_snowflake(input_file: str, table_name: str, database: str, 
         
         # Connect to Snowflake
         conn = connect(
-            account="your_snowflake_account_here",
-            user="MARK",
-            password=Variable.get("snowflake_password", default_var=""),
-            warehouse="SPORTS_WH",
+            account=os.getenv("SNOWFLAKE_ACCOUNT"),
+            user=os.getenv("SNOWFLAKE_USER"),
+            password=Variable.get("snowflake_password", default_var=os.getenv("SNOWFLAKE_PASSWORD", "")),
+            warehouse=os.getenv("SNOWFLAKE_WAREHOUSE"),
             database=database,
             schema=schema,
-            role="ACCOUNTADMIN"
+            role=os.getenv("SNOWFLAKE_ROLE", "ACCOUNTADMIN")
         )
         
         # Prepare data for insertion
